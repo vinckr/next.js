@@ -1673,7 +1673,7 @@ export default async function getBaseWebpackConfig(
               ],
               ['swcRemoveConsole', !!config.compiler?.removeConsole],
               ['swcImportSource', !!jsConfig?.compilerOptions?.jsxImportSource],
-              ['swcEmotion', !!config.experimental.emotion],
+              ['swcEmotion', !!config.compiler?.emotion],
               SWCBinaryTarget,
             ].filter<[Feature, boolean]>(Boolean as any)
           )
@@ -1803,7 +1803,7 @@ export default async function getBaseWebpackConfig(
     reactRemoveProperties: config.compiler?.reactRemoveProperties,
     styledComponents: config.compiler?.styledComponents,
     relay: config.compiler?.relay,
-    emotion: config.experimental?.emotion,
+    emotion: config.compiler?.emotion,
     modularizeImports: config.experimental?.modularizeImports,
     legacyBrowsers: config.experimental?.legacyBrowsers,
   })
